@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.youtube.player.YouTubeThumbnailView
+        android:layout_width="160dp"
+        android:layout_height="110dp"
+        android:id="@+id/videoThumbnail"
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitCenter"
+        android:layout_marginRight="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_toRightOf="@id/videoThumbnail"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_toRightOf="@id/videoThumbnail"
+            android:text="Title"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:id="@+id/videoTitle"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_toRightOf="@id/videoThumbnail"
+            android:text="This is a description"
+            android:textSize="12sp"
+            android:id="@+id/videoDescription"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:padding="5dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+            <ImageButton
+                android:id="@+id/cloudButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_marginRight="25dp"
+                android:layout_below="@id/videoTitle"
+                android:backgroundTint="@color/grey"
+                android:background="@drawable/cloud_icon"
+                android:layout_toRightOf="@id/videoThumbnail"
+                android:text="Button" />
+
+            <ImageButton
+                android:id="@+id/tocButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:clickable="true"
+
+                android:backgroundTint="@color/grey"
+                android:layout_below="@id/videoTitle"
+                android:background="@drawable/toc_icon"
+                android:layout_toRightOf="@id/videoThumbnail"
+                android:text="Button" />
+
+            <ImageButton
+                android:id="@+id/playlistButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_below="@id/videoTitle"
+                android:clickable="true"
+
+
+                android:backgroundTint="@color/grey"
+                android:background="@drawable/playlist_add_icon"
+                android:layout_toRightOf="@id/videoThumbnail"
+                android:text="Button" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey"
+        />
+
+</RelativeLayout>

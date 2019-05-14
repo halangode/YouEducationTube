@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">EduApp</string>
+    <string name="youtube_api_key">paste your YouTube API key here</string>
+
+    <string-array name="topics">
+        <item>Introduction to Android</item>
+        <item>Detailed view of architecture</item>
+        <item>Explain Actvities</item>
+        <item>Intro to Content provider</item>
+        <item>Activity lifecycle</item>
+        <item>Fragment lifecycle</item>
+    </string-array>
+
+    <string-array name="duration">
+        <item>00:23</item>
+        <item>01:23</item>
+        <item>02:20</item>
+        <item>02:50</item>
+        <item>03:03</item>
+        <item>04:13</item>
+
+    </string-array>
+</resources>
