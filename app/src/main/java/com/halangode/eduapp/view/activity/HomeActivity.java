@@ -3,13 +3,15 @@ package com.halangode.eduapp.view.activity;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -45,6 +47,20 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityContr
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        if(getResources().getString(R.string.youtube_api_key).equals("paste your YouTube API key here")) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("You have not set the youtube api key in the strings resource. Set the Youtube api key to the 'youtube_api_key' key in the string resource")
+                    .setCancelable(false)
+                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            HomeActivity.this.finish();
+                        }
+                    })
+                    .create()
+                    .show();
+        }
 
         searchItems = new ArrayList<>();
         welcomeTV = (TextView) findViewById(R.id.welcomeTV);
